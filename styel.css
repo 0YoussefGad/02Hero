@@ -305,5 +305,7 @@ a{
     }
     .container .navSearch form button{
         border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 15px
     }
 }
