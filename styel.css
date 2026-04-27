@@ -303,7 +303,11 @@ a{
     .infoHome h1{
         font-size: 20px;
     }
+    .container .navSearch form input{
+        width: 250px;
+    }
     .container .navSearch form button{
+        width: 70px;
         border-radius: 10px;
         padding: 10px 20px;
         font-size: 15px
