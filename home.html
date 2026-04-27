@@ -11,9 +11,9 @@
     <div class="container">
         <nav class="navSearch">
             <div class="logo"><h1>02Hero</h1></div>
-            <form action="">
-                <input type="text" placeholder="Search">
-                <button type="submit">Search</button>
+            <form  for="Search" action="">
+                <input onkeyup="SearchElement(this.value)" id="Search" type="text" placeholder="Search by course name">
+                <button onclick="focusSearch()" type="submit">Search</button>
             </form>
             <i id="menu-links" class="fa-solid fa-bars"></i>
             <div class="links">
@@ -75,10 +75,24 @@
                 <button><a href="#">Content Creation</a></button>
             </div>
         </main>
+        <div class="cards">
+            <div class="card">
+                <div class="image"><img src="images/Gemini_Generated_Image_qc0a7yqc0a7yqc0a.png" alt=""></div>
+                <div class="courseName"><h3>English Level 1</h3></div>
+                <div class="cardinfo"><img src="images/Gemini_Generated_Image_qc0a7yqc0a7yqc0a.png alt=""> <p>Dr:Ahmed</p> <i class="fa-regular fa-clock"></i> <p>3.20:Hours</p></div>
+            </div>
+            <div class="card">
+                <div class="image"><img src="images/Gemini_Generated_Image_qc0a7yqc0a7yqc0a.png" alt=""></div>
+                <div class="courseName"><h3>English Level 2</h3></div>
+                <div class="cardinfo"><img src="images/Gemini_Generated_Image_qc0a7yqc0a7yqc0a.png" alt=""> <p>Dr:Ahmed</p> <i class="fa-regular fa-clock"></i> <p>4.45:Hours</p></div>
+            </div>
+            <div class="card">
+                <div class="image"><img src="images/Gemini_Generated_Image_qc0a7yqc0a7yqc0a.png" alt=""></div>
+                <div class="courseName"><h3>English Level 3</h3></div>
+                <div class="cardinfo"><img src="images/Gemini_Generated_Image_qc0a7yqc0a7yqc0a.png" alt=""><p>Dr:Ahmed</p> <i class="fa-regular fa-clock"></i> <p>6:Hours</p></div>
+            </div>
+        </div>
     </div>
-    <footer>
-
-    </footer>
     <script src="main.js"></script>
 </body>
 </html>
