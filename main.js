@@ -16,13 +16,14 @@ let card = document.getElementsByClassName("card");
 function animation(x){
     for(let i = 0; i < x.length; i++){
         x[i].style.animation='fadeInUp 2s ease forwards'
+        x[i].style.opacity = 1;
     }
 }
 window.onscroll = function() {
     if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
         animation(section);
     }
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    if (document.body.scrollTop > 420 || document.documentElement.scrollTop > 420) {
         animation(card);
     }
 };
