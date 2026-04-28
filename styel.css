@@ -48,6 +48,23 @@ a{
 .container .navSearch .logo h1{
     color: #1E40AF;
 }
+#mode{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    gap: 3px;
+    border: none;
+    background-color: #F8FAFC;
+    cursor: pointer;
+}
+#mode i{
+    font-size: 20px;
+    color: #121212;
+}
+#mode p{
+    font-size: 20px;
+    color: #121212;
+}
 .container .navSearch form{
     padding: 0;
     margin: 0;
@@ -399,4 +416,36 @@ a{
 .cardinfo i {
     margin-left: 5px;
     color: #007bff;
+}
+.dark, 
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark p, 
+.dark a, 
+.dark i {
+    color: #f9f9f9 !important;
+}
+.dark{
+    background-color: #121212 !important;
+}
+/* استثناء خاص للون البرتقالي عشان ميبقاش أبيض هو كمان */
+.dark .color2 {
+    color: #FF8C00 !important;
+}
+
+.dark .back2{
+    background-color: #E67E22 ;
+}
+
+.dark .infoHome{
+    background-image: linear-gradient(to bottom , #E67E22 , #121212);
+
+}
+.dark .card{
+    background-color: #2C2C2C !important;
+
+}
+.dark .container .navSearch form button{
+    background-color: #E67E22 !important;
 }

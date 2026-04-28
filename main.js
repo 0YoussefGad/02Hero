@@ -11,6 +11,11 @@ i_links.onclick = function() {
         i_links.classList.replace("fa-xmark", "fa-bars");
     }
 }
+
+
+
+
+
 let section = document.getElementsByClassName("section");
 let card = document.getElementsByClassName("card");
 function animation(x){
@@ -31,17 +36,59 @@ window.onscroll = function() {
 
 
 
-
-
-
-
+let mode = document.getElementById("mode");
+let i = mode.querySelector("i");
+let p = mode.querySelector("p");
+let body = document.body;
+let mode2 = document.getElementsByClassName("mode2");
+let color2 = document.getElementsByClassName("color2");
 let Search = document.getElementById("Search");
-function focusSearch(){
-    Search.focus();
-}
-function SearchElement(value) {
-    for(let i = 0; i < value.length; i++)
-    {
+let back2 = document.getElementsByClassName("back2");
 
+
+
+if (localStorage.getItem("theme") === "dark") {
+    applyDarkMode();
+}
+
+mode.onclick = function() {
+    if (body.classList.contains("dark")) {
+        applyLightMode();
+    } else {
+        applyDarkMode();
     }
 }
+
+
+function applyDarkMode() {
+    i.classList.replace("fa-moon", "fa-sun");
+        p.innerHTML = "Light Mode";
+        Search.style.border = "1px solid #1E1E1E";
+        for (let i = 0; i < mode2.length; i++) {
+            mode2[i].classList.add("dark");
+        }
+        for (let i = 0; i < color2.length; i++) {
+            color2[i].classList.add("darkColor");
+        }
+    localStorage.setItem("theme", "dark"); 
+}
+
+function applyLightMode() {
+    i.classList.replace("fa-sun", "fa-moon");
+        p.innerHTML = "Dark Mode";
+        body.classList.remove("dark");
+        for (let i = 0; i < mode2.length; i++) {
+            mode2[i].classList.remove("dark");
+        }
+        for (let i = 0; i < color2.length; i++) {
+            color2[i].classList.remove("darkColor");
+        }
+    localStorage.setItem("theme", "light"); 
+}
+
+
+
+
+
+
+
