@@ -255,7 +255,18 @@ a{
 .section:nth-child(6) { animation-delay: 0.6s; }
 .section:nth-child(7) { animation-delay: 0.7s; }
 .section:nth-child(8) { animation-delay: 0.8s; }
-
+#btn{
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 10px 10px; 
+    background-color: chocolate;
+    right: 5px;
+    bottom: 20px;
+    cursor: pointer;
+    display: none;
+}
 
 
 

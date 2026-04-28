@@ -18,6 +18,7 @@ i_links.onclick = function() {
 
 let section = document.getElementsByClassName("section");
 let card = document.getElementsByClassName("card");
+let btn = document.getElementById("btn");
 function animation(x){
     for(let i = 0; i < x.length; i++){
         x[i].style.animation='fadeInUp 2s ease forwards'
@@ -25,6 +26,13 @@ function animation(x){
     }
 }
 window.onscroll = function() {
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+
     if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
         animation(section);
     }
@@ -62,7 +70,7 @@ mode.onclick = function() {
 
 function applyDarkMode() {
     i.classList.replace("fa-moon", "fa-sun");
-        p.innerHTML = "Light Mode";
+        p.innerHTML = "Light";
         Search.style.border = "1px solid #1E1E1E";
         for (let i = 0; i < mode2.length; i++) {
             mode2[i].classList.add("dark");
@@ -75,7 +83,7 @@ function applyDarkMode() {
 
 function applyLightMode() {
     i.classList.replace("fa-sun", "fa-moon");
-        p.innerHTML = "Dark Mode";
+        p.innerHTML = "Dark";
         body.classList.remove("dark");
         for (let i = 0; i < mode2.length; i++) {
             mode2[i].classList.remove("dark");
@@ -86,8 +94,31 @@ function applyLightMode() {
     localStorage.setItem("theme", "light"); 
 }
 
+function focusSearch() {
+    document.getElementById("Search").focus();
+}
+function SearchElement(value) {
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        
+        if (card.innerText.toLowerCase().includes(value.toLowerCase())) {
+            card.style.display = "block"; 
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
 
 
+
+
+btn.onclick = function() {
+    scroll({
+        top: 0,
+        behavior: 'smooth'
+    })
+}
 
 
 
