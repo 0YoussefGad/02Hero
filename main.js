@@ -25,6 +25,9 @@ function animation(x){
         x[i].style.opacity = 1;
     }
 }
+
+
+
 window.onscroll = function() {
 
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -32,7 +35,6 @@ window.onscroll = function() {
     } else {
         btn.style.display = "none";
     }
-
     if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
         animation(section);
     }
