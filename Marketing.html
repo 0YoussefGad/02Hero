@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styel.css">
+    <link rel="stylesheet" href="style.css">
     <title>Languages</title>
 </head>
 
@@ -13,22 +13,17 @@
     <div class="container">
 
         <nav class="navSearch">
-            <div class="logo color2">
-                <h1 class="color2">Courserizer</h1>
-            </div>
-            <button id="mode" class="mode2">
-                <i class="fa-solid fa-moon color2"></i>
-                <p class="color2">Dark Mode</p>
-            </button>
-            <form action="">
-                <input class="mode2" id="Search" type="text" placeholder="Search by language">
-                <button class="back2" type="submit">Search</button>
+            <div class="logo color2"><h1 class="color2">Courserizer</h1></div>
+            <button id="mode" class="mode2"><i class="fa-solid fa-moon color2"></i> <p class="color2">Dark</p></button>
+            <form  for="Search" action="">
+                <input class="mode2" onkeyup="SearchElement(this.value)" id="Search" type="text" placeholder="Search by course name">
+                <a href="#Get"><button class="back2" onclick="focusSearch()" type="button">Search</button></a>
             </form>
             <i id="menu-links" class="fa-solid fa-bars"></i>
             <div class="links mode2">
                 <a class="link color2" href="login.html">Logout</a>
-                <a class="link color2" href="">My account</a>
-                <a class="link color2" href="">Education pathways</a>
+                <a class="link color2" href="register.html">Register</a>
+                <a class="link color2" href="#main">Education pathways</a>
             </div>
         </nav>
         <main id="main">
@@ -42,16 +37,16 @@
                 <button  class="back2"><a href="programming.html">Programming</a></button>
             </div>
             <div class="section">
-                <button id="sectionActive" class="back2"><a href="#">Marketing</a></button>
+                <button id="sectionActive" class="back2"><a href="Marketing.html">Marketing</a></button>
             </div>
             <div class="section">
-                <button class="back2"><a href="Graphic Designer.html">Graphic Designer</a></button>
+                <button class="back2"><a href="GraphicDesigner.html">Graphic Designer</a></button>
             </div>
             <div class="section">
-                <button class="back2"><a href="#">Logo Designer</a></button>
+                <button class="back2"><a href="LogoDesigner.html">Logo Designer</a></button>
             </div>
             <div class="section">
-                <button class="back2"><a href="#">Digital Marketer</a></button>
+                <button class="back2"><a href="DigitalMarketer.html">Digital Marketer</a></button>
             </div>
             <div class="section">
                 <button class="back2"><a href="Content Creation.html">Content Creation</a></button>

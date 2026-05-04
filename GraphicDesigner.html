@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Courserizer - Graphic Designer</title>
+</head>
+<body class="mode2">
+    <div class="container">
+       <nav class="navSearch">
+            <div class="logo color2"><h1 class="color2">Courserizer</h1></div>
+            <button id="mode" class="mode2"><i class="fa-solid fa-moon color2"></i> <p class="color2">Dark</p></button>
+            <form  for="Search" action="">
+                <input class="mode2" onkeyup="SearchElement(this.value)" id="Search" type="text" placeholder="Search by course name">
+                <a href="#Get"><button class="back2" onclick="focusSearch()" type="button">Search</button></a>
+            </form>
+            <i id="menu-links" class="fa-solid fa-bars"></i>
+            <div class="links mode2">
+                <a class="link color2" href="login.html">Logout</a>
+                <a class="link color2" href="register.html">Register</a>
+                <a class="link color2" href="#main">Education pathways</a>
+            </div>
+        </nav>
+
+        <div id="userWelcomeBar" class="user-welcome-bar" style="display: none;">
+            <div class="welcome-content">
+                <i class="fa-regular fa-circle-check"></i>
+                <span id="welcomeUserName">Welcome back!</span>
+                <span id="userEmailDisplay"></span>
+            </div>
+        </div>
+
+        <main id="main">
+            <div class="section">
+                <button class="back2"><a href="home.html">Home</a></button>
+            </div>
+            <div class="section">
+                <button class="back2"><a href="Languages.html">Languages</a></button>
+            </div>
+            <div class="section">
+                <button class="back2"><a href="programming.html">Programming</a></button>
+            </div>
+            <div class="section">
+                <button class="back2"><a href="Marketing.html">Marketing</a></button>
+            </div>
+            <div class="section">
+                <button id="sectionActive" class="back2"><a href="GraphicDesigner.html">Graphic Designer</a></button>
+            </div>
+            <div class="section">
+                <button class="back2"><a href="LogoDesigner.html">Logo Designer</a></button>
+            </div>
+            <div class="section">
+                <button class="back2"><a href="DigitalMarketer.html">Digital Marketer</a></button>
+            </div>
+            <div class="section">
+                <button class="back2"><a href="Content Creation.html">Content Creation</a></button>
+            </div>
+        </main>
+
+        <div class="aaa">
+            <h1>Graphic Design Courses</h1>
+        </div>
+
+        <div class="cards mode2" id="Get">
+            <div class="card mode2">
+                <div class="image"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d" alt="Photoshop"></div>
+                <div class="courseName"><h3 class="course">Photoshop Mastery</h3></div>
+                <div class="cardinfo color2">
+                    <i class="fa-solid fa-user color2"></i> <p>Dr: Sarah Ahmed</p>
+                    <i class="fa-regular fa-clock color2"></i> <p>20 Hours</p>
+                    <p>Start</p><i class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+            <div class="card mode2">
+                <div class="image"><img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e" alt="Illustrator"></div>
+                <div class="courseName"><h3 class="course">Illustrator Advanced</h3></div>
+                <div class="cardinfo color2">
+                    <i class="fa-solid fa-user color2"></i> <p>Dr: Omar Hisham</p>
+                    <i class="fa-regular fa-clock color2"></i> <p>15 Hours</p>
+                    <p>Start</p><i class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+            <div class="card mode2">
+                <div class="image"><img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c" alt="InDesign"></div>
+                <div class="courseName"><h3 class="course">InDesign Professional</h3></div>
+                <div class="cardinfo color2">
+                    <i class="fa-solid fa-user color2"></i> <p>Dr: Nourhan Ali</p>
+                    <i class="fa-regular fa-clock color2"></i> <p>12 Hours</p>
+                    <p>Start</p><i class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+            <div class="card mode2">
+                <div class="image"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5" alt="Figma"></div>
+                <div class="courseName"><h3 class="course">Figma UI/UX Design</h3></div>
+                <div class="cardinfo color2">
+                    <i class="fa-solid fa-user color2"></i> <p>Dr: Menna Hamdy</p>
+                    <i class="fa-regular fa-clock color2"></i> <p>18 Hours</p>
+                    <p>Start</p><i class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+            <div class="card mode2">
+                <div class="image"><img src="https://images.unsplash.com/photo-1581291519195-ef11498d1cf2" alt="After Effects"></div>
+                <div class="courseName"><h3 class="course">After Effects Motion</h3></div>
+                <div class="cardinfo color2">
+                    <i class="fa-solid fa-user color2"></i> <p>Dr: Peter Samy</p>
+                    <i class="fa-regular fa-clock color2"></i> <p>22 Hours</p>
+                    <p>Start</p><i class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+            <div class="card mode2">
+                <div class="image"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5" alt="Adobe XD"></div>
+                <div class="courseName"><h3 class="course">Adobe XD Prototyping</h3></div>
+                <div class="cardinfo color2">
+                    <i class="fa-solid fa-user color2"></i> <p>Dr: Rawan Essam</p>
+                    <i class="fa-regular fa-clock color2"></i> <p>10 Hours</p>
+                    <p>Start</p><i class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+        </div>
+        <button id="btn"><i class="fa-solid fa-angles-up"></i></button>
+    </div>
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fa-regular fa-user"></i> My Profile</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body" id="profileInfo"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        function checkAuthStatus() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            const guestLinks = document.getElementById('guestLinks');
+            const userLinks = document.getElementById('userLinks');
+            const userWelcomeBar = document.getElementById('userWelcomeBar');
+            const welcomeUserName = document.getElementById('welcomeUserName');
+            const userEmailDisplay = document.getElementById('userEmailDisplay');
+
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                if (guestLinks) guestLinks.style.display = 'none';
+                if (userLinks) userLinks.style.display = 'flex';
+                if (userWelcomeBar) {
+                    userWelcomeBar.style.display = 'block';
+                    if (welcomeUserName) welcomeUserName.textContent = `Welcome back, ${user.name || user.fullName || 'Member'}!`;
+                    if (userEmailDisplay) userEmailDisplay.textContent = user.email;
+                }
+            } else {
+                if (guestLinks) guestLinks.style.display = 'flex';
+                if (userLinks) userLinks.style.display = 'none';
+                if (userWelcomeBar) userWelcomeBar.style.display = 'none';
+            }
+        }
+
+        function logout() {
+            sessionStorage.removeItem('currentUser');
+            window.location.reload();
+        }
+
+        function showProfile() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                const profileInfo = document.getElementById('profileInfo');
+                const modal = document.getElementById('profileModal');
+                
+                profileInfo.innerHTML = `
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+                    <div class="profile-field">
+                        <label>Full Name:</label>
+                        <span>${user.fullName || user.name || 'N/A'}</span>
+                    </div>
+                    <div class="profile-field">
+                        <label>Email:</label>
+                        <span>${user.email}</span>
+                    </div>
+                    <div class="profile-field">
+                        <label>Phone:</label>
+                        <span>${user.phone || 'Not provided'}</span>
+                    </div>
+                    <div class="profile-field">
+                        <label>Member Since:</label>
+                        <span>${user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'Recently'}</span>
+                    </div>
+                `;
+                modal.style.display = 'flex';
+            }
+        }
+
+        function showMyCourses() {
+            alert('Your enrolled courses will appear here. Start learning today!');
+        }
+
+        function showCertificates() {
+            alert('Your certificates will be available here upon course completion.');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthStatus();
+            
+            const logoutBtn = document.getElementById('logoutLink');
+            if (logoutBtn) logoutBtn.addEventListener('click', function(e) { e.preventDefault(); logout(); });
+            
+            const profileBtn = document.getElementById('profileLink');
+            if (profileBtn) profileBtn.addEventListener('click', function(e) { e.preventDefault(); showProfile(); });
+            
+            const myCoursesBtn = document.getElementById('myCoursesLink');
+            if (myCoursesBtn) myCoursesBtn.addEventListener('click', function(e) { e.preventDefault(); showMyCourses(); });
+            
+            const certificatesBtn = document.getElementById('certificatesLink');
+            if (certificatesBtn) certificatesBtn.addEventListener('click', function(e) { e.preventDefault(); showCertificates(); });
+            
+            const dashboardBtn = document.getElementById('dashboardLink');
+            if (dashboardBtn) dashboardBtn.addEventListener('click', function(e) { e.preventDefault(); window.location.href = 'dashboard.html'; });
+            
+            const closeModal = document.querySelector('.close-modal');
+            if (closeModal) closeModal.addEventListener('click', function() { document.getElementById('profileModal').style.display = 'none'; });
+            
+            window.addEventListener('click', function(e) { const modal = document.getElementById('profileModal'); if (e.target === modal) modal.style.display = 'none'; });
+        });
+    </script>
+</body>

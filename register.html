@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل حساب جديد</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box register-box">
+            <div class="logo">
+                <h2>منصة التعلم</h2>
+                <p>أنشئ حسابك الجديد</p>
+            </div>
+
+            <form id="registerForm">
+                <div class="input-group">
+                    <label>الاسم الكامل</label>
+                    <input type="text" id="fullName" placeholder="أدخل اسمك الكامل" required>
+                </div>
+
+                <div class="input-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" id="regEmail" placeholder="example@domain.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>رقم الهاتف</label>
+                    <input type="tel" id="phone" placeholder="05xxxxxxxx">
+                </div>
+
+                <div class="input-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" id="regPassword" placeholder="********" required>
+                    <small class="hint">يجب أن تكون 8 أحرف على الأقل</small>
+                </div>
+
+                <div class="input-group">
+                    <label>تأكيد كلمة المرور</label>
+                    <input type="password" id="confirmPassword" placeholder="********" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="termsCheck">
+                    <label>أوافق على <a href="#">الشروط والأحكام</a></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">تسجيل حساب</button>
+            </form>
+
+            <div id="regMessage" class="message"></div>
+
+            <div class="form-footer">
+                <p>لديك حساب بالفعل؟ <a href="login.html">تسجيل الدخول</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const regMessage = document.getElementById('regMessage');
+
+        function showMessage(text, type) {
+            regMessage.textContent = text;
+            regMessage.className = `message ${type}`;
+            setTimeout(() => {
+                regMessage.style.display = 'none';
+                regMessage.className = 'message';
+            }, 3000);
+        }
+
+        function getUsers() {
+            const users = localStorage.getItem('users');
+            return users ? JSON.parse(users) : [];
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        function emailExists(email, users) {
+            return users.some(user => user.email === email);
+        }
+
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const termsAccepted = document.getElementById('termsCheck').checked;
+
+            if (!fullName || !email || !password) {
+                showMessage('الرجاء ملء جميع الحقول المطلوبة', 'error');
+                return;
+            }
+
+            if (password.length < 8) {
+                showMessage('كلمة المرور يجب أن تكون 8 أحرف على الأقل', 'error');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showMessage('كلمة المرور غير متطابقة', 'error');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('البريد الإلكتروني غير صالح', 'error');
+                return;
+            }
+
+            if (!termsAccepted) {
+                showMessage('يجب الموافقة على الشروط والأحكام', 'error');
+                return;
+            }
+
+            const users = getUsers();
+
+            if (emailExists(email, users)) {
+                showMessage('هذا البريد مسجل بالفعل', 'error');
+                return;
+            }
+
+            const newUser = {
+                id: Date.now(),
+                fullName: fullName,
+                email: email,
+                phone: phone,
+                password: password,
+                createdAt: new Date().toISOString()
+            };
+
+            users.push(newUser);
+            saveUsers(users);
+
+            showMessage('تم إنشاء الحساب بنجاح! جاري التحويل...', 'success');
+
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 1500);
+        });
+    </script>
+    <script src="main2.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
