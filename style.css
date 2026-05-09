@@ -1,13 +1,4 @@
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 .container{
     width: 100%;
     display: flex;
@@ -247,14 +238,7 @@ a{
     background-color: grey;
 }
 
-.section:nth-child(1) { animation-delay: 0.1s; }
-.section:nth-child(2) { animation-delay: 0.2s; }
-.section:nth-child(3) { animation-delay: 0.3s; }
-.section:nth-child(4) { animation-delay: 0.4s; }
-.section:nth-child(5) { animation-delay: 0.5s; }
-.section:nth-child(6) { animation-delay: 0.6s; }
-.section:nth-child(7) { animation-delay: 0.7s; }
-.section:nth-child(8) { animation-delay: 0.8s; }
+
 #btn{
     position: fixed;
     height: 30px;
@@ -364,16 +348,8 @@ a{
     color: white;
     }
 }
-@media screen and (max-width: 720px){
 
-}
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
-    background-color: #f9f9f9;
-}
+
 
 .cards{
     width: 100%;
@@ -383,7 +359,7 @@ a{
     align-items: center;
     padding: 10px 0 10px 0;
     height: auto;
-    gap: 20px;
+    gap: 30px;
     margin: 20px auto;
 }
 .card {
@@ -392,8 +368,8 @@ a{
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    opacity: 1;
+    transition:  0.3s ;
+    
 }
 
 .card:hover {
@@ -403,7 +379,7 @@ a{
 }
 
 .card .image img {
-    width: 100%;
+    width: fit-content;
     height: 350px;
     object-fit: cover;
 }
@@ -434,6 +410,72 @@ a{
 .cardinfo i {
     margin-left: 5px;
     color: #007bff;
+}
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    bottom: 0;
+    position: relative
+}
+.footer_links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 70%;
+    gap: 15px;
+}
+.footer_links a {
+    color: white;
+}
+
+.footer_links a:hover,.dark .footer_links a:hover { 
+    color: #007bff;
+}
+.social-media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 30%;
+    gap: 15px;
+    cursor: pointer;
+}
+.social-media a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #36374892;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.social-media a i{
+    color: white;
+}
+.social-media a :hover,.dark .social-media a :hover{
+    color: #007bff;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding: 30px 0 30px 0;
+}
+pre{
+    max-width: 100%;
+    white-space: pre-wrap;
+    font-size: 18px;
+    font-family: sans-serif;
 }
 .dark, 
 .dark h1, 

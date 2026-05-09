@@ -16,15 +16,15 @@ i_links.onclick = function() {
 
 
 
-let section = document.getElementsByClassName("section");
-let card = document.getElementsByClassName("card");
-let btn = document.getElementById("btn");
-function animation(x){
-    for(let i = 0; i < x.length; i++){
-        x[i].style.animation='fadeInUp 2s ease forwards'
-        x[i].style.opacity = 1;
-    }
-}
+// let section = document.getElementsByClassName("section");
+// let card = document.getElementsByClassName("card");
+// let btn = document.getElementById("btn");
+// function animation(x){
+//     for(let i = 0; i < x.length; i++){
+//         x[i].style.animation='fadeInUp 2s ease forwards'
+//         x[i].style.opacity = 1;
+//     }
+// }
 
 
 
