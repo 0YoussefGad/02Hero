@@ -16,8 +16,9 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    height: 100vh;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
     background-color: #F8FAFC;
 }
 a{
@@ -1252,4 +1253,58 @@ body.dark .profile-field span {
         font-size: 12px;
         padding: 10px 15px;
     }
+}
+
+
+
+
+/*style Instructor */
+
+#mainInstructor{
+    flex: 1;
+}
+#PageName{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#PageName h2{
+    color: #1E40AF;
+    font-weight: 800;
+    font-size: 35px;
+
+}
+.data{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: min-content;
+    padding: 30px 0 30px 0;
+    gap: 20px;
+}
+.data form{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    padding: 30px 0 30px 0;
+    gap: 20px;
+    flex-wrap: wrap
+}
+.datas input{
+    width: 250px;
+    border-radius: 8px;
+    height: 30px;
+}
+.datas label{
+    font-size: 25px;
+}
+#btnSubmit{
+    width: 150px;
+    border-radius: 8px;
+    height: 30px;
+    cursor: pointer;
 }

@@ -5,12 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    
     <title>Courserizer</title>
 </head>
 <body>
-    <div class="container">
+    <header>
         
-        <footer>
+        <div class="logo"><h1>Courserizer</h1></div>
+        <style>
+            .logo{
+                padding: 20px;
+            }
+            .logo h1{
+            color: #1E40AF;
+            font-weight: 800;
+            font-size: 45px;
+            }
+        </style>
+    </header>
+    <main id="mainInstructor">
+        <div id="PageName">
+            <h2>Join as an instructor</h2>
+        </div>
+        <div class="data">
+            <form>
+                <div class="datas">
+                    <label for="instructorName">Name</label>
+                    <input id="instructorName" type="text" placeholder="Instructor Name" name="instructorName" required>
+                </div>
+            <div class="datas">
+                <label for="instructorEmail">Email</label>
+            <input id="instructorEmail" type="email" placeholder="example@gmail.com" name="instructorEmail" required>
+            </div>
+            <div class="datas">
+                <label for="phone">phone</label>
+            <input type="tel" id="phone" placeholder="+201xxxxxxxx" name="phone" required>
+            </div>
+            <div class="datas">
+                <label for="CourseName">Course Name</label>
+            <input type="text" id="CourseName" placeholder="Course Name" name="CourseName" required>
+            </div>
+            <div class="datas">
+                <label for="experience">experience</label>
+            <input  id="experience" type="number"placeholder="At least five years"  name="experience" required>
+            </div>
+            <button id="btnSubmit" type="submit">Join us</button>
+        </form>
+        <p id="message"></p>
+        </div>
+    </main>
+    <footer>
             <div class="footer_links">
                 <a href="home.html">Home</a>
                 <a href="Terms and Conditions.html">Terms and Conditions</a>
@@ -22,10 +66,7 @@
                 <a target="_blank" href="https://github.com/0YoussefGad"><i class="fa-brands fa-github"></i></a>
                 <a target="_blank" href="mailto:youssef200512270@gmail.com"><i class="fa-solid fa-at"></i></a>
             </div>
-        </footer>
-        <button id="btn"><i class="fa-solid fa-angles-up"></i></button>
-        
-    </div>
-    
+    </footer>
+    <script src="main3.js"></script>
 </body>
 </html>

@@ -14,20 +14,6 @@ i_links.onclick = function() {
 
 
 
-
-
-// let section = document.getElementsByClassName("section");
-// let card = document.getElementsByClassName("card");
-// let btn = document.getElementById("btn");
-// function animation(x){
-//     for(let i = 0; i < x.length; i++){
-//         x[i].style.animation='fadeInUp 2s ease forwards'
-//         x[i].style.opacity = 1;
-//     }
-// }
-
-
-
 window.onscroll = function() {
 
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -35,13 +21,14 @@ window.onscroll = function() {
     } else {
         btn.style.display = "none";
     }
-    if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120) {
-        animation(section);
-    }
-    if (document.body.scrollTop > 420 || document.documentElement.scrollTop > 420) {
-        animation(card);
-    }
 };
+btn.onclick = function() {
+    scroll({
+        top: 0,
+        behavior: 'smooth'
+    })
+}
+
 
 
 
@@ -96,32 +83,94 @@ function applyLightMode() {
     localStorage.setItem("theme", "light"); 
 }
 
-function focusSearch() {
-    document.getElementById("Search").focus();
-}
+
 function SearchElement(value) {
+
     let cards = document.querySelectorAll(".card");
+    let searchValue = value.toLowerCase();
 
-    cards.forEach(card => {
-        
-        if (card.innerText.toLowerCase().includes(value.toLowerCase())) {
-            card.style.display = "block"; 
-        } else {
-            card.style.display = "none";
+    for (let i = 0; i < cards.length; i++) {
+
+        let textInCard = cards[i].innerText.toLowerCase();
+
+        if ( textInCard.includes(searchValue) ) {
+            cards[i].style.display = "block";
+        } 
+
+        else {
+            cards[i].style.display = "none"; 
         }
-    });
+    }
 }
 
 
 
+/*instructor */
 
-btn.onclick = function() {
-    scroll({
-        top: 0,
-        behavior: 'smooth'
-    })
+
+let form = document.querySelector("form");
+let instructorName = document.getElementById("instructorName");
+let instructorEmail = document.getElementById("instructorEmail");
+let phone = document.getElementById("phone");
+let experience = document.getElementById("experience");
+let CourseName = document.getElementById("CourseName");
+let btnSubmit = document.getElementById("btnSubmit");
+let message = document.getElementById("message");
+
+//check data
+function checkData(e) {
+    if ( ! ( instructorEmail.value.includes("@gmail.com") ) ) {
+        e.preventDefault();
+        message.innerHTML='Invalid email address';
+                    message.style.cssText=
+        `
+    text-align: center;
+    width: 100%;
+    padding: 30px 0 30px 0;
+    font-size: 20px;
+    color: rgba(230, 43, 43, 0.94);
+    font-weight: bold;
+    `;
+    }
+    else if (! ( phone.value.includes('011') || phone.value.includes ('012') || phone.value.includes('015') || phone.value.includes('010') ) ){
+        e.preventDefault();
+        message.innerHTML='Please enter an Egyptian number';
+            message.style.cssText=
+        `
+    text-align: center;
+    width: 100%;
+    padding: 30px 0 30px 0;
+    font-size: 20px;
+    color: rgba(230, 43, 43, 0.94);
+    font-weight: bold;
+    `;
+    }
+    else if(experience.value < 5)
+    {
+        e.preventDefault();
+        message.innerHTML='You cannot join as a lecturer if you have less than five years of experience.';
+            message.style.cssText=
+        `
+    text-align: center;
+    width: 100%;
+    padding: 30px 0 30px 0;
+    font-size: 20px;
+    color: rgba(230, 43, 43, 0.94);
+    font-weight: bold;
+    `;
+    }
+    else{
+        e.preventDefault();
+        message.innerHTML='We will contact you to join us';
+        message.style.cssText=
+        `
+    text-align: center;
+    width: 100%;
+    padding: 30px 0 30px 0;
+    font-size: 20px;
+    color: rgb(47, 200, 47);
+    font-weight: bold;
+    `;
+    }
 }
-
-
-
-
+form.onsubmit = checkData;
